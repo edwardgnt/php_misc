@@ -14,11 +14,12 @@ $headers = [
 $ch  = curl_init();
 
 curl_setopt_array($ch, [
-    CURLOPT_URL =>   "https://jsonplaceholder.typicode.com/albums/1",
+    CURLOPT_URL =>   "https://jsonplaceholder.typicode.com/invalid",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_CUSTOMREQUEST => "PATCH",
     CURLOPT_POSTFIELDS => $payload,
-    CURLOPT_HTTPHEADER => $headers
+    CURLOPT_HTTPHEADER => $headers,
+    CURLOPT_HEADER => true
 ]);
 
 $data = curl_exec($ch);
