@@ -17,6 +17,10 @@ $response = $client->patch("https://jsonplaceholder.typicode.com/albums/1", [
     "body" => $payload
 ]);
 
+var_dump($response->getStatusCode());
+
+var_dump($response->getHeader("Content-Type"));
+
 var_dump((string)$response->getBody());
 
 
